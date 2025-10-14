@@ -33,3 +33,10 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+TODO_COMMANDS.txt
+
+# Excel files
+*.xls
+*.xlsx
+*.xlsm
+*.csv
