@@ -40,3 +40,7 @@ TODO_COMMANDS.txt
 *.xlsx
 *.xlsm
 *.csv
+
+# Ignore Microsoft Word documents
+*.doc
+*.docx
