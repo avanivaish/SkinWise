@@ -1,3 +1,48 @@
+"""
+Script: scrape_plum_goodness_website_multiple_pages.py
+Author: Avani
+
+Description:
+-------------
+This script scrapes all skincare product listings from the PlumGoodness website, page by page, and collects detailed product information.
+
+Features:
+---------
+1. Iteratively fetches product listings from all paginated pages:
+   - Page URL format: 'https://plumgoodness.com/collections/skincare?page={page_number}'
+   - Stops automatically when no more products are found.
+
+2. For each product, it scrapes:
+   - Product Name
+   - Product Link
+   - Rating (from 'div.rating')
+   - Number of Reviews (from 'div.rating__count')
+   - Keywords/Description (from 'p.text-sm.text-current.mb-1')
+   - Skin Type (from 'div.product-type > span')
+   - Current Price (from 'strong.price__current')
+   - MRP (from 's.price__was')
+
+3. Handles missing data gracefully:
+   - Fields not found are marked as "N/A".
+
+4. Saves the final data to an Excel file:
+   - File: Data/plumgoodness_products.xlsx
+   - Columns: Name, Link, Rating, Reviews, Keywords, Skin Type, Price, MRP
+
+Usage:
+------
+1. Run the script:
+       scrape_plum_goodness_website_multiple_pages.py
+2. Wait for the scraping to finish; a 1-second delay is used between pages.
+3. The Excel file will be saved in the current working directory.
+
+Note:
+-----
+- A custom User-Agent is used to avoid request blocks.
+- The script prints progress per page and total products scraped.
+"""
+
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
