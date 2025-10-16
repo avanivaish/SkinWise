@@ -35,6 +35,7 @@ dist/
 *.egg-info/
 TODO_COMMANDS.txt
 Application_Scaling.txt
+Personalized_skincare_plan_generator.txt
 
 # Excel files
 *.xls
